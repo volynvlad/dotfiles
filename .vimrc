@@ -40,14 +40,7 @@ Plugin 'tmhedberg/SimpylFold'
 
 let g:SimpylFold_docstring_preview=1
 
-:au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
+au BufNewFile, BufRead *.py set tabstop=4 set softtabstop=4 set shiftwidth=4 set textwidth=79 set expandtab set autoindent set fileformat=unix
 
 Plugin 'vim-scripts/indentpython.vim'
 
@@ -57,7 +50,17 @@ Bundle 'Valloric/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'vim-syntastic/syntastic'
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:sytastic_python_checkers = ['pandas']
 
 Plugin 'nvie/vim-flake8'
 
@@ -81,7 +84,11 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 Plugin 'kien/ctrlp.vim'
 set nu
 Plugin 'tpope/vim-fugitive'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'christoomey/vim-tmux-navigator'
 set clipboard=unnamed
 map <C-o> :NERDTreeToggle<CR>
+
+let python_comment='# '
+
+xnoremap # :norm 0i<C-r>=python_comment<CR><CR>
+xnoremap & :norm ^<C-r>=len(python_comment)<CR>x<CR>
+

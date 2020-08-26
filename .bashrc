@@ -152,3 +152,10 @@ source ~/.profile
 
 # pysparkling
 alias sparkling="PYSPARK_DRIVER_PYTHON="ipython" PYSPARK_DRIVER_PYTHON_OPTS="notebook" /~/~/sparkling-water-2.4.5/bin/pysparkling"
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH="$HOME/progs/golang"
+export GOBIN="$GOPATH/bin"
+export SCALA_HOME="/usr/local/share/scala"
+export PATH="$PATH:$SCALA_HOME/bin"
+
+export DOCKER_HOST=127.0.0.1

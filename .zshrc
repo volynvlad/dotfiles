@@ -115,7 +115,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # java
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
 # spark init
 # export SPARK_HOME=/usr/local/spark
 # export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
@@ -138,3 +138,14 @@ export PATH=$SPARK_HOME/python:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # alias sparkling="PYSPARK_DRIVER_PYTHON="ipython" PYSPARK_DRIVER_PYTHON_OPTS="notebook" ~/Documents/sparkling-water-2.4.5/bin/pysparkling"
+export JENKINS_HOME=/etc/default/jenkins
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/vlad/google-cloud-sdk/path.zsh.inc' ]; then . '/home/vlad/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/vlad/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/vlad/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH="$HOME/progs/golang"
+export GOBIN="$GOPATH/bin"
+export PATH="$PATH:/usr/local/sbt/bin"
